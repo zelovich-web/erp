@@ -6,14 +6,12 @@ import MainPage from './components/MainPage';
 
 const App = () => {
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-    console.log('Is authenticated:', isAuthenticated); // Для отладки
+    console.log('Is authenticated:', isAuthenticated); 
     return (
         <Router>
             <Routes>
                 <Route path="/login" element={<LoginForm />} />
-                <Route path="/mainPage" element={<MainPage />} />
-                
-                {/* Перенаправление на страницу логина, если пользователь не авторизован */}
+                <Route path="/mainPage" element={<MainPage />} />    
                 <Route path="/" element={isAuthenticated ? <Navigate to="/mainPage" /> : <Navigate to="/login" />} />
             </Routes>
         </Router>

@@ -10,15 +10,15 @@ const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('');
-    const [loginError, setLoginError] = useState(null); // Состояние для ошибок
+    const [loginError, setLoginError] = useState(null); 
 
-    // Получаем состояние аутентификации из Redux
+  
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
     
-    // Эффект для перенаправления при успешном входе
+  
     useEffect(() => {
         if (isAuthenticated) {
-            navigate('/mainPage'); // Ваш маршрут перенаправления
+            navigate('/mainPage'); 
         }
     }, [isAuthenticated, navigate]);
 
@@ -26,21 +26,21 @@ const LoginPage = () => {
         e.preventDefault();
 
         const user = {
-            name: username,
+            username: username,
             password: password
         };
         
         try {
-            await dispatch(login(user, role)); // Предполагаем, что login - это асинхронное действие
+            await dispatch(login(user, role)); 
         } catch (error) {
-            setLoginError('Ошибка входа. Пожалуйста, проверьте свои данные.'); // Установка ошибки
+            setLoginError('Ошибка входа. Пожалуйста, проверьте свои данные.');
         }
     };
 
     return (
         <div>
             <h1>Login</h1>
-            {loginError && <div className="error">{loginError}</div>} {/* Отображение ошибки */}
+            {loginError && <div className="error">{loginError}</div>} 
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

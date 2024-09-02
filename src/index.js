@@ -1,12 +1,12 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client'; // Импортируем createRoot
+import { createRoot } from 'react-dom/client'; 
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from './store/store'; // Импортируйте ваше хранилище и персистор
+import { store, persistor } from './store/store';
 import App from './App';
 
-const container = document.getElementById('root'); // Получаем элемент с id 'root'
-const root = createRoot(container); // Создаем корень 
+const container = document.getElementById('root'); 
+const root = createRoot(container);
 
 root.render(
   <Provider store={store}>
