@@ -1,0 +1,121 @@
+.SignInWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    height: 100vh;
+}
+.SignInForm {
+    background: linear-gradient(160.87deg, rgba(18, 128, 255, 0.48) 39.92%, rgba(255, 255, 255, 0.192) 79.95%, rgba(18, 128, 255, 0.48) 102.53%);
+    flex: 1; 
+}
+
+.FirstBlock {
+    flex: 1; 
+    background: linear-gradient(180deg, #0054B6 0%, #0766D3 50%, #0054B6 100%);
+}
+
+.firstBlockLogo {
+    margin-left: 50vh;
+    margin-top: 10vh;
+}
+
+.backArrow {
+    margin: 10vh 0 10vh 75vh;
+    cursor: pointer;
+}
+
+.error {
+    color: red; 
+    margin-top: 10px; 
+    font-size: 0.875rem; 
+}
+
+.SignInFormTitle {
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: center;
+    color:#0054B6;
+    margin-bottom: 4rem;
+}
+
+.SignInForm {
+    text-align: center;
+}
+
+.SignInForm input {
+    width: 100%; 
+    max-width: 482px;
+    height: 60px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 24px;
+    box-shadow: -4px 12px 54px -12px rgba(34, 60, 80, 0.2);
+    padding-left: 20px;
+    box-sizing: border-box;
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.SignInForm input::placeholder {
+    color: #1280FF99;
+    font-family: Montserrat;
+    font-size: 1rem;
+}
+
+ .SignInForm input:focus {
+    outline: none;
+    color: #1280FF99;
+}
+
+.SignInForm input:not(:placeholder-shown) {
+    color: #1280FF99;
+}
+
+.SignInForm p {
+    margin-top: 5vh;
+    color: #1280FF99;
+}
+
+
+.SignInForm button {
+    width: 100%;
+    max-width: 482px;
+    height: 69px;
+    background: linear-gradient(180deg, #1280FF 30.73%, #0B4D99 245.17%);
+    border: none;
+    cursor: pointer;
+    font-family: Montserrat Subrayada;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.38px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+    .firstBlockLogo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .SignInFormTitle {
+        font-size: 1.5rem;
+    }
+    
+    .backArrow {
+        margin: 10px auto;
+    }
+    
+    input, button {
+        width: 90%;
+    }
+
+    input {
+        height: 50px;
+    }
+}
