@@ -1,7 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
+import AdminDashBoard from '../AdminDashBoard/AdminDashBoard';
+import TeacherDashBoard from '../TeacherDashBoard/TeacherDashBoard';
+import StudentDashBoard from '../StudentDashBoard/StudentDashBoard';
+import User from '../User';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -15,11 +18,13 @@ const Dashboard = () => {
   const renderContent = () => {
     switch (role) {
       case 'admin':
-        return <AdminDashboard />; 
+        return <AdminDashBoard />; 
       case 'teacher':
-        return <TeacherDashboard />; 
+        return <TeacherDashBoard />; 
       case 'student':
-        return <StudentDashboard />;
+        return <StudentDashBoard />;
+      case 'user':
+        return <User />
       default:
         return <div>У вас нет доступа к этому разделу.</div>;
     }
@@ -34,8 +39,5 @@ const Dashboard = () => {
   );
 };
 
-const AdminDashboard = () => <div>Здесь находятся функции для администратора.</div>;
-const TeacherDashboard = () => <div>Здесь находятся функции для учителя.</div>;
-const StudentDashboard = () => <div>Здесь находятся функции для студента.</div>;
 
 export default Dashboard;

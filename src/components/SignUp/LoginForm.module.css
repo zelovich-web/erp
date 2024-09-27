@@ -86,7 +86,7 @@
     background: linear-gradient(180deg, #1280FF 30.73%, #0B4D99 245.17%);
     border: none;
     cursor: pointer;
-    font-family: Montserrat Subrayada;
+    font-family: Montserrat;
     font-size: 20px;
     font-weight: 700;
     line-height: 24.38px;
@@ -99,12 +99,16 @@
     color: red; 
     margin-top: 10px; 
     font-size: 0.875rem; 
+    font-family: Montserrat;
+
 }
 
 .succses {
     color: green;
     margin-top: 10px; 
     font-size: 0.875rem; 
+    font-family: Montserrat;
+
 }
 
 
@@ -130,3 +134,6 @@
         height: 50px;
     }
 }
+
+
+  
