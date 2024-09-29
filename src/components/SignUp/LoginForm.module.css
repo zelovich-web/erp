@@ -4,33 +4,53 @@
     flex-wrap: nowrap;
     overflow: hidden;
     height: 100vh;
+    position: relative;
 }
 
 .LoginForm {
     background: linear-gradient(160.87deg, rgba(18, 128, 255, 0.48) 39.92%, rgba(255, 255, 255, 0.192) 79.95%, rgba(18, 128, 255, 0.48) 102.53%);
-    flex: 1; /* Занимает всю доступную ширину */
+    flex: 1;
 }
 
 .FirstBlock {
-    flex: 1; /* Занимает всю доступную ширину */
+    position: relative;
+    flex: 1; 
     background: linear-gradient(180deg, #0054B6 0%, #0766D3 50%, #0054B6 100%);
 }
 
 
 
+.SvgContainer {
+    position: absolute;
+    top: 0;
+    left: 199.71px;
+    opacity: 0.3px;
+
+}
+
+.PicComp {
+    position: absolute;
+    left: 323px;
+    top: 323px;
+    
+}
+
+
 .LoginFormTitle {
     font-family: Montserrat;
-    font-size: 2rem; /* Использование rem для лучшей адаптивности */
+    font-size: 2rem; 
     font-weight: 300;
     line-height: 1.5;
     text-align: center;
     color:#0054B6;
-    margin-bottom: 4rem; /* Изменено на rem */
+    margin-bottom: 4rem; 
 }
 
 .firstBlockLogo {
     margin-left: 50vh;
-    margin-top: 10vh; /* Установка верхнего отступа */
+    margin-top: 10vh; 
+    width: 460px;
+    height: 115px;
 }
 
 
@@ -44,8 +64,8 @@
 }
 
 .LoginForm input {
-    width: 100%; /* Устанавливаем ширину 100% для адаптивности */
-    max-width: 482px; /* Устанавливаем максимальную ширину */
+    width: 100%; 
+    max-width: 482px; 
     height: 60px;
     border: none;
     border-radius: 6px;
@@ -54,14 +74,14 @@
     padding-left: 20px;
     box-sizing: border-box;
     font-family: Montserrat;
-    font-size: 1.25rem; /* Используем rem для адаптивности */
+    font-size: 1.25rem; 
     font-weight: 300;
 }
 
 .LoginForm input::placeholder {
     color: #1280FF99;
     font-family: Montserrat;
-    font-size: 1rem; /* Уменьшаем размер для адаптивности */
+    font-size: 1rem; 
 }
 
  .LoginForm input:focus {
@@ -80,8 +100,8 @@
 
 
 .LoginForm button {
-    width: 100%; /* Подгоняем под 100% ширины родительского */
-    max-width: 482px; /* Максимальная ширина */
+    width: 100%; 
+    max-width: 482px; 
     height: 69px;
     background: linear-gradient(180deg, #1280FF 30.73%, #0B4D99 245.17%);
     border: none;
@@ -109,6 +129,10 @@
     font-size: 0.875rem; 
     font-family: Montserrat;
 
+}
+
+.errorInput {
+    border: 1px solid red;
 }
 
 

@@ -1,0 +1,103 @@
+.DashBoardWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    background: linear-gradient(175.36deg, rgba(18, 128, 255, 0.48) -3.07%, rgba(255, 255, 255, 0.192) 58.14%, rgba(18, 128, 255, 0.48) 92.66%);
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.DashBoardAside {
+    background: linear-gradient(150.19deg, #0157B9 37.37%, rgba(4, 93, 197, 0.985) 69.75%, rgba(7, 102, 211, 0.97) 102.13%);
+    height: 100vh;
+    width: 688px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 10px 10px 6px 0px #20202033;
+    
+
+}
+
+.DashBoardMainSide {
+    z-index: 999;
+    flex: 1;
+}
+
+.DashBoardLogo {
+    margin: 160px 421px 27px ;
+}
+
+.DashBoardNav {
+    margin: 0px 26px 0px 421px;
+}
+
+.DashBoardNav li  {
+    font-size: 17.94px;
+    font-weight: 700;
+    line-height: 31.39px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #64A6F1;
+    cursor: pointer;
+    margin-bottom: 9.36px;
+    list-style: none;
+    margin-left: 10px;
+}
+
+.DashBoardNav p {
+    font-size: 17.94px;
+    font-weight: 700;
+    line-height: 31.39px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #64A6F1;
+    margin-bottom: 26px;
+}
+
+
+.li1 {
+    background-image: url('..//../assets/li1.svg');
+    background-repeat: no-repeat; 
+    padding-left: 40px; 
+}
+.li2 {
+    background-image: url('..//../assets/li2.svg');
+    background-repeat: no-repeat; 
+    padding-left: 40px; 
+}
+.li3 {
+    background-image: url('..//../assets/li3.svg');
+    background-repeat: no-repeat; 
+    padding-left: 40px; 
+}
+.li4 {
+    background-image: url('..//../assets/li4.svg');
+    background-repeat: no-repeat; 
+    padding-left: 40px; 
+}
+.li5 {
+    background-image: url('..//../assets/li5.svg');
+    background-repeat: no-repeat; 
+    padding-left: 40px; 
+}
+.li6 {
+    background-image: url('..//../assets/li6.svg');
+    background-repeat: no-repeat; 
+    padding-left: 40px; 
+}
+.li7 {
+    background-image: url('..//../assets/li7.svg');
+    background-repeat: no-repeat; 
+    padding-left: 40px; 
+}
+.li8 {
+    background-image: url('..//../assets/li8.svg');
+    background-repeat: no-repeat; 
+    padding-left: 40px; 
+}
+
+@media (max-width: 768px) {
+    .DashBoardLogo {
+        max-width: 80%; /* Меняем размер логотипа на мобильных устройствах */
+    }
+}

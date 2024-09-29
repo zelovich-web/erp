@@ -5,7 +5,8 @@ import AdminDashBoard from '../AdminDashBoard/AdminDashBoard';
 import TeacherDashBoard from '../TeacherDashBoard/TeacherDashBoard';
 import StudentDashBoard from '../StudentDashBoard/StudentDashBoard';
 import User from '../User';
-
+import styles from './DashBoard.module.css'
+import logo from '..//../assets/firstBlockLogo.svg'
 const Dashboard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -32,9 +33,26 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Личный кабинет</h1>
-      {renderContent()}
-      <button onClick={handleLogout}>Выйти</button>
+      <div className={styles.DashBoardWrapper}>
+        <div className={styles.DashBoardAside}>
+        <img className={styles.DashBoardLogo} src={logo} alt="logo" />
+        <ul className={styles.DashBoardNav}><p>Innodom ERP</p>
+          <li className={styles.li1}>Ученики </li>
+          <li className={styles.li2}>Группы</li>
+          <li className={styles.li3}>Преподаватели</li>
+          <li className={styles.li4}>Задания</li>
+          <li className={styles.li5}>Награды</li>
+          <li className={styles.li6}>Заявки на <br /> получение наград</li>
+          <li className={styles.li7}>Аналитика</li>
+          <li className={styles.li8}>Настройки</li>
+        </ul>
+
+        </div>
+        <div className={styles.DashBoardMainSide}>
+        {renderContent()}
+        
+        </div>
+      </div>
     </div>
   );
 };
