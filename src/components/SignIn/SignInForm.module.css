@@ -7,32 +7,47 @@
     overflow: hidden;
 }
 .SignInForm {
-    background: linear-gradient(160.87deg, rgba(18, 128, 255, 0.48) 39.92%, rgba(255, 255, 255, 0.192) 79.95%, rgba(18, 128, 255, 0.48) 102.53%);
+    background: linear-gradient(175.36deg, rgba(18, 128, 255, 0.48) -3.07%, rgba(255, 255, 255, 0.192) 58.14%, rgba(18, 128, 255, 0.48) 92.66%);
     flex: 1; 
+    padding:254px 465px 0px 54px ;
 }
 
 .FirstBlock {
     position: relative;
     flex: 1; 
-    background: linear-gradient(180deg, #0054B6 0%, #0766D3 50%, #0054B6 100%);
+    background: linear-gradient(107.8deg, #1280FF -62.76%, #0056C5 -22.4%, #0054B6 32.19%, #0025B4 71.3%, #000B94 100.19%);
+
 }
 
 .firstBlockLogo {
     margin-left: 50vh;
-    margin-top: 10vh;
+    margin-top: 166px;
+    margin-right: 57px;
     width: 460px;
     height: 115px;
     
 }
 
+.glare {
+    top: 0;
+    right: -155px;
+    position: absolute;
+    pointer-events: none;   
+}
+
+
 .backArrow {
-    margin: 10vh 0 10vh 75vh;
     cursor: pointer;
+    width: 32.49px;
+    height: 32.49px;
+    top: 149.75px;
+    left: 997.35px;
+    position: absolute;
+    
 }
 
 .error {
     color: red; 
-    margin-top: 10px; 
     font-size: 0.875rem; 
 }
 
@@ -92,7 +107,7 @@
 
 .SignInForm button {
     width: 100%;
-    max-width: 482px;
+    max-width: 204px;
     height: 69px;
     background: linear-gradient(180deg, #1280FF 30.73%, #0B4D99 245.17%);
     border: none;
@@ -104,6 +119,8 @@
     text-align: center;
     color: #FFFFFF;
     margin-top: 48px;
+    box-shadow: 0px 3.8px 3.8px 0px #00000040;
+    border-radius: 7.61px;
 }
 
 .SvgContainer {
@@ -118,7 +135,7 @@
     position: absolute;
     left: 323px;
     top: 323px;
-    
+     
 }
 
 

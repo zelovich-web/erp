@@ -8,7 +8,7 @@
 }
 
 .DashBoardAside {
-    background: linear-gradient(150.19deg, #0157B9 37.37%, rgba(4, 93, 197, 0.985) 69.75%, rgba(7, 102, 211, 0.97) 102.13%);
+    background: linear-gradient(107.8deg, #0054B6 -62.76%, #0056C5 -22.4%, #0054B6 32.19%, #0025B4 71.3%, #000B94 100.19%);
     height: 100vh;
     width: 688px;
     border-top-right-radius: 20px;
@@ -18,23 +18,60 @@
 
 }
 
+
+.glare {
+    position: absolute;
+    pointer-events: none;   
+    height: 450px;
+    opacity: 0.8;
+
+}
+
+.duga1 {
+    position: absolute;
+    left: 130px;
+    pointer-events: none;   
+    max-height: 100%;
+
+}
+
+
+
+.duga2 {
+    position: absolute;
+    left: 221.76px;
+    max-height: 100%;
+    pointer-events: none;   
+
+}
+
+.logout {
+    margin-left: 422px;
+    cursor: pointer;
+    margin-top: 195px;
+}
+
 .DashBoardMainSide {
     z-index: 999;
     flex: 1;
+    overflow: hidden;
+
 }
 
 .DashBoardLogo {
-    margin: 160px 421px 27px ;
+    margin: 60px 421px 27px ;
 }
 
 .DashBoardNav {
     margin: 0px 26px 0px 421px;
+    display: flex;
+    flex-direction: column;
+    gap: 9.36px;
 }
 
 .DashBoardNav li  {
     font-size: 17.94px;
     font-weight: 700;
-    line-height: 31.39px;
     letter-spacing: -0.02em;
     text-align: left;
     color: #64A6F1;
@@ -42,16 +79,20 @@
     margin-bottom: 9.36px;
     list-style: none;
     margin-left: 10px;
+    line-height: 31.39px;
+}
+
+.DashBoardNav li:hover {
+    color: #FFFFFF;
+    transition: 0.25s;
 }
 
 .DashBoardNav p {
     font-size: 17.94px;
     font-weight: 700;
-    line-height: 31.39px;
-    letter-spacing: -0.02em;
-    text-align: left;
+    text-align: center;
     color: #64A6F1;
-    margin-bottom: 26px;
+    margin-bottom: 70px;
 }
 
 
@@ -96,8 +137,111 @@
     padding-left: 40px; 
 }
 
-@media (max-width: 768px) {
-    .DashBoardLogo {
-        max-width: 80%; /* Меняем размер логотипа на мобильных устройствах */
-    }
+.DashBoardHeaderItems {
+    display: flex;
+    gap: 43.4px;
+    margin: 74.44px 0px 93.49px 37.39px;
+    
+}
+
+.DashBoardHeaderItems input {
+    border-radius: 44.02px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 11.01px 21.28px #0D78F024;
+}
+
+
+.DashBoardInputSearch {
+    width: 244.69px;
+    height: 30.86px;
+    background-image: url('..//../assets/search.svg');
+    background-repeat: no-repeat;
+    padding-left: 25.04px;
+    background-position: 9.56px;
+    color: #B8D9FF;
+
+}
+
+.DashBoardInputSearch::placeholder {
+    color: #B8D9FF;
+}
+
+.DashBoardProfile p {
+    color: #74B4FF;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12.19px;
+    text-align: left;
+    padding-left: 8.68px;
+
+}
+
+.notifcon {
+    padding-left: 10px;
+    padding-right: 7.83px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+.BackArrow {
+    width: 30.86px;
+    height: 30.86px;
+    cursor: pointer;
+    
+}
+
+
+.DashBoardProfile {
+    width: 181.31px;
+    height: 30.86px;
+    background-color: #fff;
+    border-radius: 44.02px;
+    box-shadow: 0px 11.01px 21.28px #0D78F024;
+}
+
+.DashBoardProfileAvatar {
+    width: 30.86px; 
+    height: 30.86px; 
+    border-radius: 50%; 
+    background-color: black;
+}
+
+.DashBoardСalendar {
+    width: 121.07px;
+    height:30.86px;
+    background-color: #fff;
+    border-radius: 44.02px;
+    box-shadow: 0px 11.01px 21.28px #0D78F024;
+    display: flex;
+    gap: 5.87px;
+    justify-content: center;
+
+
+}
+
+.DashBoardHeaderItems div, img {
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.DashBoardСalendar p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #71B3FF;
+    
+}
+
+
+.renderContent {
+    margin-left: 37.39px;
 }

@@ -1,3 +1,215 @@
 .p {
-    color: black;
+    color: #1280FF;
+}
+
+.AdminDashBoardWrapper{
+    width: 708.14px;
+    height: 535.25px;
+    background: #fff;
+}
+
+.AdminDashBoardPossibilities {
+    display: flex;
+    gap: 45px;
+}
+
+.AdminDashBoardForm {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 484px;
+    height: 236px;
+    margin: 73.18px 108px;
+}
+
+.AdminDashBoardForm input {
+    min-height: 52px;
+    border-radius: 8.02px;
+    outline: none;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15.85px;
+    color:#1280FF70; 
+    padding-left: 20.6px;  
+    border: 2px solid;
+}
+
+.AdminDashBoardForm input::placeholder {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15.85px;
+    color:#1280FF70; 
+ 
+}
+
+
+
+
+.AdminDashBoardSwitches {
+    cursor: pointer;
+    color: #94B1D3; 
+    position: relative; 
+    font-size: 16.57px;
+    font-weight: 700;
+    line-height: 17.89px;
+    transition: color 0.3s ease; 
+    padding-top: 16.63px;
+    left: 17.64px;
+    min-height: 49.81px;
+}
+
+.AdminDashBoardSwitches.active {
+    color: #1280FF; 
+}
+
+.active::before {
+    content: ""; 
+    position: absolute; 
+    top: 12.63px; 
+    height: 2px; 
+    width: 54.38px; 
+    background-color: #1280FF; 
+    border-radius: 2px; 
+    transition: width 0.3s ease, left 0.3s ease; 
+}
+
+.AdminDashBoardSwitches:not(.active)::before {
+    content: ""; 
+    position: absolute; 
+    top: 12.63px; 
+    height: 2px; 
+    width: 0;
+    background-color: #1280FF;
+    border-radius: 2px; 
+    transition: width 0.3s ease; 
+}
+
+.FIO {
+    position: absolute;
+    top: 316px;
+    left: 860px;
+    background-color: #fff;
+    padding: 0px 10px;
+    font-size: 12.03px;
+    font-weight: 500;
+    color:#1280FF99;
+}
+
+.login {
+    position: absolute;
+    top: 392px;
+    left: 860px;
+    background-color: #fff;
+    padding: 0px 6px;
+    font-size: 12.03px;
+    font-weight: 500;
+    color:#1280FF99;
+
+}
+
+.password {
+    position: absolute;
+    top: 469px;
+    left: 860px;
+    background-color: #fff;
+    padding: 0px 3px;
+    font-size: 12.03px;
+    font-weight: 500;
+    color:#1280FF99;
+}
+.password2 {
+    position: absolute;
+    top: 545px;
+    left: 860px;
+    background-color: #fff;
+    padding: 0px 3px;
+    font-size: 12.03px;
+    font-weight: 500;
+    color:#1280FF99;
+}
+
+.tg {
+    position: absolute;
+    top: 469px;
+    left: 860px;
+    background-color: #fff;
+    padding: 0px 3px;
+    font-size: 12.03px;
+    font-weight: 500;
+    color:#1280FF99;
+}
+
+button {
+    width: 484.27px;
+    min-height: 52px;
+    border-radius: 46.72px;
+    outline: none;
+    border: none;
+    background: #1280FF;
+    box-shadow: 0px 9.34px 18.97px 0px #1280FF80;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.94px;
+    color: #fff; 
+}
+
+.AdminDashBoardSwitch {
+    display: flex;
+    margin-top: 27px;
+}
+
+.AdminDashBoardSuperAdmin {
+    border-top: 6px;
+    width: 353px;
+    background-color: #F0F0F0;
+    color: #99B0CB;
+    height: 31px;
+    opacity: 0px;
+    border: 1px solid #99B0CB ;
+    text-align: center;
+    cursor: pointer;
+    border-top-right-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 2s;
+
+}
+
+.AdminDashBoardAccMng { 
+    border-top: 6px;
+    background-color: #F0F0F0;
+    color: #99B0CB;
+    width: 354px;
+    height: 31px;
+    opacity: 0px;
+    border: 1px solid #BBDBFE ;
+    text-align: center;
+    cursor: pointer;
+    border-top-left-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 2s;
+}
+
+.switchActive {
+    color: #3492FE;
+    background-color: #ffffff;
+    border-bottom: none;
+    border-left: none;
+}
+
+.AdminDashBoardListTable {
+    margin: 27px 22px 32px 22px ;
+    width: 671px;
+    height: 281px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.AdminDashBoardListTable li {
+    color: #7C7C7D;
+    list-style-type: none;
 }
