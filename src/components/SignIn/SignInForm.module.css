@@ -28,6 +28,21 @@
     
 }
 
+.eyeLog {
+    position: absolute;
+    cursor: pointer;
+    left: 73.5%; 
+    top: 44.5%; 
+}
+
+.eyePass {
+    position: absolute;
+    cursor: pointer;
+    left:73.5%;
+    top: 53.5%;
+
+}
+
 .glare {
     top: 0;
     right: -155px;
@@ -48,7 +63,12 @@
 
 .error {
     color: red; 
-    font-size: 0.875rem; 
+    font-size: 0.875rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 6.66px;
+    margin-top: 10px;
 }
 
 
@@ -105,7 +125,7 @@
 }
 
 
-.SignInForm button {
+.SignInFormBtn {
     width: 100%;
     max-width: 204px;
     height: 69px;
@@ -136,6 +156,16 @@
     left: 323px;
     top: 323px;
      
+}
+
+.ForgotPassword {
+    text-decoration: none;
+}
+
+.SignInFormSocialNav {
+    display: flex;
+    gap: 14px;
+    margin: 30px 0px 355px 170px;
 }
 
 

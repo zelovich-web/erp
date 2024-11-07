@@ -7,6 +7,18 @@ import firstBlockLogo from '../../assets/firstBlockLogo.svg'
 import backArrow from '..//../assets/Back Arrow.png'
 import picComp from '..//../assets/PIC_COMP.png'
 import glare from '..//..//assets/glare.svg'
+import eye from '..//..//assets/Eye.svg'
+import closedEye from '..//..//assets/Closed Eye.svg'
+import warning from '..//..//assets/warning.svg'
+import google from '..//..//assets/chrome.svg'
+import facebook from '..//..//assets/facebook.svg'
+import inst from '..//..//assets/instagram.svg'
+
+
+
+
+
+
 
 const SignInForm = () => {
     const dispatch = useDispatch();
@@ -15,9 +27,8 @@ const SignInForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    console.log(error);
+    const [showPassword, setShowPassword] = useState(false);
     
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const user = fakeUsers.find((u) => u.username === username && u.password === password);
@@ -32,6 +43,10 @@ const SignInForm = () => {
             setError('Неправильно указан логин и пароль');
         }
     };
+
+    const toggleShowPassword = () => {
+        setShowPassword(!showPassword)
+    }
 
     if (isAuthenticated) {
         navigate('/dashBoard');
@@ -56,7 +71,7 @@ const SignInForm = () => {
                         className={styles.SignInInput}
                         style={{border:error ? '2px solid red': '#F04438'}}
                         placeholder='Введите логин'
-                        type="text"
+                        type='text'
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
@@ -67,24 +82,25 @@ const SignInForm = () => {
                         className={styles.SignInInput}
                         style={{border:error ? '2px solid red': '#F04438'}}
                         placeholder='Введите пароль'
-                        type="password"
+                        type={showPassword ? 'text' : 'password'}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        required
+                        required    
                     />
+                    <img onClick={toggleShowPassword} className={styles.eyePass} src={showPassword ? eye : closedEye} alt="" />
+
                 </div>
-                {error && <div className={styles.error}>{error}</div>}
-                <button type="submit">Войти</button>
-                <p>
-                Нет аккаунта? 
-                <span 
-                    style={{ cursor: 'pointer', color: 'black', textDecoration: 'underline' }} 
-                    onClick={() => navigate('/login')} 
-                >
-                    Зарегистрироваться
-                </span>
-            </p>
+                {error && <div className={styles.error}><img src={warning}/>{error}</div>}
+                <button className={styles.SignInFormBtn} type="submit">Войти</button>
+                <Link className={styles.ForgotPassword} to='/'><p>Забыли пароль?</p></Link>
+                <div className={styles.SignInFormSocialNav}>
+                        <Link to='/'><img src={google} alt="google" /></Link>
+                        <Link to='/'><img src={facebook} alt="facebook" /></Link>
+                        <Link to='/'><img src={inst} alt="inst" /></Link>
+
+                </div>
             </form>
+            
             
         </div>
     );

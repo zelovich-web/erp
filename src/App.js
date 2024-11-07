@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import LoginForm from './components/SignUp/LoginForm';
 import SignInForm from './components/SignIn/SignInForm';
 import DashBoard from './components/DashBoard/DashBoard';
 import UnauthorizedPage from './components/UnauthorizedPage';
@@ -75,7 +74,6 @@ const AppRoutes = () => {
                 } 
             />
             
-            <Route path="/login" element={<LoginForm />} />
             <Route path="/SignInForm" element={<SignInForm />} />
             <Route 
                 path="/DashBoard" 
