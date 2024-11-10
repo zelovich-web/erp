@@ -4,9 +4,8 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #ECF5FF;
     font-family: Montserrat;
-
+    overflow: hidden
 
 }
 

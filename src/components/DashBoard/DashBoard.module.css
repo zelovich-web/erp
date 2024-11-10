@@ -177,13 +177,15 @@
 
 }
 
-.notifcon {
-    padding-left: 10px;
-    padding-right: 7.83px;
-    cursor: pointer;
+.DashBoardProfile {
+    position: relative;
 }
 
 
+.DashBoardToolTip {
+    position: absolute;
+    right: 11px;
+}
 
 
 

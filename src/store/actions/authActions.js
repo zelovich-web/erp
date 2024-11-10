@@ -7,3 +7,5 @@ export const login = (user, role, username) => ({
 export const logout = () => ({
   type: 'LOGOUT',
 });
+
+

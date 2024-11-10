@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
-import fakeUsers from '../../fakeDataBase';
 import styles from './SignInForm.module.css'
 import firstBlockLogo from '../../assets/firstBlockLogo.svg'
 import backArrow from '..//../assets/Back Arrow.png'
@@ -13,8 +12,7 @@ import warning from '..//..//assets/warning.svg'
 import google from '..//..//assets/chrome.svg'
 import facebook from '..//..//assets/facebook.svg'
 import inst from '..//..//assets/instagram.svg'
-
-
+import { findUsers } from '../../fakeDataBase';
 
 
 
@@ -28,21 +26,32 @@ const SignInForm = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        const user = fakeUsers.find((u) => u.username === username && u.password === password);
         
+        const user = findUsers(username, password)
+
+
         if (user) {
             dispatch({
                 type: 'LOGIN',
                 payload: { user: { username: user.username, role: user.role } },
             });
-            navigate('/dashBoard');
+    
+            if (user.role === 'account-manager') {
+                navigate('/AccountManager');
+            } else {
+                navigate('/');
+            }
         } else {
             setError('Неправильно указан логин и пароль');
         }
     };
+    
+   
+    
 
     const toggleShowPassword = () => {
         setShowPassword(!showPassword)
@@ -53,6 +62,13 @@ const SignInForm = () => {
         return null;
     }
 
+
+    const isFormValid = () => {
+        return username !== '' && password !== '';
+    };
+
+    
+    
     return (
         <div className={styles.SignInWrapper}>
             <div className={styles.FirstBlock}>
@@ -91,7 +107,13 @@ const SignInForm = () => {
 
                 </div>
                 {error && <div className={styles.error}><img src={warning}/>{error}</div>}
-                <button className={styles.SignInFormBtn} type="submit">Войти</button>
+                <button 
+                className={isFormValid() ? styles.SignInFormBtn : styles.disabledButton} 
+                type="submit" 
+                disabled={!isFormValid()}
+                >
+                    Войти
+                </button>
                 <Link className={styles.ForgotPassword} to='/'><p>Забыли пароль?</p></Link>
                 <div className={styles.SignInFormSocialNav}>
                         <Link to='/'><img src={google} alt="google" /></Link>

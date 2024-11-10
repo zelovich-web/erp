@@ -1,9 +1,9 @@
 import React from 'react'
 
-const AccountManager = () => {
+const AccountManagerDashBoard = () => {
   return (
     <div>AccountManager</div>
   )
 }
 
-export default AccountManager
+export default AccountManagerDashBoard;

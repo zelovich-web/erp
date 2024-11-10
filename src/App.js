@@ -11,7 +11,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import AdminDashBoard from './components/AdminDashBoard/AdminDashBoard';
 import StudentDashBoard from './components/StudentDashBoard/StudentDashBoard';
 import TeacherDashBoard from './components/TeacherDashBoard/TeacherDashBoard';
-import AccountManager from './components/AccountManagerDashBoard/AccountManagerDashBoard';
+import AccountManager from './components/AccountManager/AccountManager'
+import AccountManagerDashBoard from './components/AccountManagerDashBoard/AccountManagerDashBoard'
 
 const AppRoutes = () => {
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -60,8 +61,8 @@ const AppRoutes = () => {
             <Route 
                 path="/AccountManagerDashBoard" 
                 element={
-                    <ProtectedRoute allowedRoles={['account-manager']}>
-                        <AccountManager />
+                    <ProtectedRoute allowedRoles={['account-managerDashBoard']}>
+                        <AccountManagerDashBoard />
                     </ProtectedRoute>
                 } 
             />
@@ -78,7 +79,7 @@ const AppRoutes = () => {
             <Route 
                 path="/DashBoard" 
                 element={
-                    <ProtectedRoute allowedRoles={['admin', 'teacher', 'student', 'account-manager']}>
+                    <ProtectedRoute allowedRoles={['admin', 'teacher', 'student', 'account-manager', 'account-managerDashBoard']}>
                         <DashBoard />
                     </ProtectedRoute>
                 } 

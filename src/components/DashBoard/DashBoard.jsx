@@ -56,7 +56,7 @@ const Dashboard = () => {
         return <TeacherDashBoard />; 
       case 'student':
         return <StudentDashBoard />;
-      case 'account-manager':
+      case 'account-managerDashBoard':
         return <AccountManagerDashBoard />
       default:
         return <div>У вас нет доступа к этому разделу.</div>;
@@ -99,8 +99,9 @@ const Dashboard = () => {
               <div className={styles.DashBoardProfile}>
                 <div className={styles.DashBoardProfileAvatar}></div>
                 <p>{userName}</p>
-                <img className={styles.notifcon} src={notifcon} alt="" />
-                <img style={{cursor:'pointer'}} src={arrowDown} alt="" />
+                <div className={styles.DashBoardToolTip}>
+                   <img style={{cursor:'pointer'}} src={arrowDown} alt="" />
+                </div>
               </div>
         </div>
         <div className={styles.renderContent}>

@@ -1,0 +1,58 @@
+.AccountManagerWrapper {
+    height: 100vh;
+    background: linear-gradient(288.8deg, #00A9F4 2.51%, #0056C5 33.65%, rgba(0, 11, 148, 0.74) 47.53%, #0054B6 92.65%, #0025B4 131.4%);
+
+}
+
+.logo {
+    justify-content: center;
+    display: flex;
+    padding-top: 98px;
+}
+
+
+.AccountManagerContent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 элемента в строке */
+    gap: 12px; /* Отступ между элементами */
+    padding-top: 75px;
+    padding-left: 539px;
+    padding-right: 539px;
+}
+
+.AccountManagerContentItems {
+    height: 189px;
+    border-radius: 14.02px;
+    background: #fff;
+    text-align: center;
+    color: #0D78F0;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 1;
+
+
+}
+
+.AccountManagerContentItems:hover {
+    color: #fff;
+    background: linear-gradient(180deg, #10BBFF 0%, #B88EFF 100%);
+
+}
+
+.raketa {
+    position: absolute;
+    top: -120.73px;
+    left: 503.76px;
+    width: 1200px;
+    height: 1200px;
+    
+}
+
+

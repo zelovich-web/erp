@@ -22,6 +22,20 @@
     margin: 73.18px 108px;
 }
 
+.eyePass {
+    position: absolute;
+    top: 489px;
+    right: 620px;
+    cursor: pointer;
+}
+
+.eyePassManager {
+    position: absolute;
+    top: 565px;
+    right: 620px;
+    cursor: pointer;
+}
+
 .AdminDashBoardForm input {
     min-height: 52px;
     border-radius: 8.02px;
@@ -69,7 +83,7 @@
     height: 2px; 
     width: 54.38px; 
     background-color: #1280FF; 
-    border-radius: 2px; 
+    border-radius: 1px; 
     transition: width 0.3s ease, left 0.3s ease; 
 }
 
@@ -80,7 +94,7 @@
     height: 2px; 
     width: 0;
     background-color: #1280FF;
-    border-radius: 2px; 
+    border-radius: 1px; 
     transition: width 0.3s ease; 
 }
 
@@ -139,7 +153,7 @@
     color:#1280FF99;
 }
 
-button {
+.AdminDashBoardBtn {
     width: 484.27px;
     min-height: 52px;
     border-radius: 46.72px;
@@ -151,11 +165,30 @@ button {
     font-weight: 600;
     line-height: 21.94px;
     color: #fff; 
+    cursor: pointer;
+}
+
+.disabledButton {
+    width: 484.27px;
+    min-height: 52px;
+    border-radius: 46.72px;
+    outline: none;
+    border: none;
+    background: #C9CCD0;
+    box-shadow: 0px 9.34px 18.97px 0px #1280FF80;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.94px;
+    color: #fff; 
 }
 
 .AdminDashBoardSwitch {
     display: flex;
     margin-top: 27px;
+}
+
+.AdminDashBoardSwitch img {
+    margin-left: 48px;
 }
 
 .AdminDashBoardSuperAdmin {
@@ -172,15 +205,51 @@ button {
     justify-content: center;
     align-items: center;
     display: flex;
-    transition: 2s;
+    transition: 0.5s;
+    border-left: none;
 
+}
+
+.AdminDashBoardListTable li {
+    display: flex;
+}
+
+.AdminDashBoardListTable div {
+    position: absolute;
+    left: 60%;
+    gap: 13.56px;
+    display: flex;
+
+}
+
+
+.AdminDashBoardListTable button {
+    width: 115px;
+    height: 24px;
+    border-radius: 6px;
+    background-color: #2D87EF;
+    color: #fff;
+    border: none;
+    font-size: 9.08px;
+    font-weight: 700;
+    line-height: 12.97px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+.AdminDashBoardListTable button img {
+    margin-left: 7px;
 }
 
 .AdminDashBoardAccMng { 
     border-top: 6px;
     background-color: #F0F0F0;
     color: #99B0CB;
-    width: 354px;
+    width: 356px;
     height: 31px;
     opacity: 0px;
     border: 1px solid #BBDBFE ;
@@ -190,7 +259,9 @@ button {
     justify-content: center;
     align-items: center;
     display: flex;
-    transition: 2s;
+    transition: 0.5s;
+    border-right: none;
+
 }
 
 .switchActive {
@@ -212,4 +283,17 @@ button {
 .AdminDashBoardListTable li {
     color: #7C7C7D;
     list-style-type: none;
+    margin-bottom: 32px;
+
 }
+
+.AdminDashBoardListTable li:hover {
+
+}
+
+.AdminDashBoardListTable li p {
+    margin-left: 5px;
+}
+
+
+
