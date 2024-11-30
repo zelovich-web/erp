@@ -1,0 +1,127 @@
+.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease; 
+}
+
+.closed {
+    display: none;
+}
+
+.modalContent{
+    width: 713px;
+    height: 560px;
+    border-radius: 6px 0px 0px 0px;
+    background-color: white;
+}
+
+.EditUserTitle {
+    display: flex;
+    margin-top: 44px;
+    align-items: center;
+    margin-left: 165px;
+    gap: 65px;
+}
+
+.EditUserTitle h1 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: center;
+    color: #99B0CB;
+
+    
+}
+
+.EditUserForm {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-left: 114px;
+}
+
+.EditUserForm input {
+    width: 333px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #F0F0F0;
+    outline: none;
+    color: #1280FF;
+    padding-left: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+}
+
+.EditUserForm label {
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    color: #99B0CB; 
+}
+
+.Fio label {
+    margin-right: 39px;
+}
+
+.Login label {
+    margin-right: 30px;
+}
+
+.Password label {
+    margin-right: 21px;
+}
+
+.Email label {
+    margin-right: 35px;
+}
+
+.Password {
+    display: flex;
+    align-items: center;
+}
+
+.Tg label {
+    margin-right: 13px;
+}
+
+
+.Password button {
+    margin-left: 13px;
+    background-color: #2D87EF;
+    color: #fff;
+    width: 145px;
+    height: 36px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid #F0F0F0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.btn {
+    background-color: #2D87EF;
+    color: #fff;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid #F0F0F0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-left: 237px;
+    margin-top: 48px;
+    width: 231px;
+    height: 40px;
+}

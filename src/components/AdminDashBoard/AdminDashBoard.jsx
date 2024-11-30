@@ -7,26 +7,29 @@ import closedEye from '..//..//assets/Closed Eye.svg'
 import printer from '../../assets/printer.svg'
 import edit from './../../assets/edit form.svg'
 import deleteIcon from '../../assets/delete 2.svg'
+import EditUser from "../EditUser/EditUser";
 
 const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
     
 
     const [adminType, setAdminType] = useState("superAdmin");
-    const admins = fakeUsers.filter(user => user.role === 'admin');
-    const managers = fakeUsers.filter(user => user.role === 'account-manager');
+    const [admins, setAdmins] = useState(fakeUsers.filter(user => user.role === 'admin'));
+    const [managers, setManagers] = useState(fakeUsers.filter(user => user.role === 'account-manager'));
     const [adminName, setAdminName] = useState('')
     const [adminLogin, setAdminLogin] = useState('')
+    const [adminEmail, setAdminEmail] = useState('')
     const [adminPassword, setAdminPassword] = useState('')
     const [managerName, setManagerName] = useState('')
     const [managerLogin, setManagerLogin] = useState('')
     const [managerPassword, setManagerPassword] = useState('')
     const [managerTg, setManagerTg] = useState('') 
+    const [managerEmail, setManagerEmail] = useState('')
     const [error, setError] = useState('');
     const [errorManager, setErrorManager] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [showPasswordManager, setShowPasswordManager] = useState(false);
-
-
+    const [openEditUser, setOpenEditUser] = useState(false)
+    const [selectedUser, setSelectedUser] = useState(null);
 
     const toggleShowPassword = () => {
         setShowPassword(!showPassword)
@@ -36,15 +39,13 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
     }
 
 
-
     const isFormValid = () => {
-        return adminName !== '' && adminPassword !== '' && adminLogin !== '';
+        return adminName !== '' && adminPassword !== '' && adminLogin !== '' && adminEmail;
     };
 
     const isFormValidManager = () => {
-        return managerName !== '' && managerPassword !== '' && managerPassword !== ''
+        return managerName !== '' && managerPassword !== '' && managerPassword !== '' && managerEmail;
     }
-
 
 
     const registerNewAdmin = (e) => {
@@ -53,10 +54,11 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
 
         const newAdmin = {
             fio: adminName,
-            login: adminLogin,
+            username: adminLogin,
             password: adminPassword,
             role: 'admin',
             fio: adminName,
+            email: adminEmail,
         }
         try {
             addUser(newAdmin);
@@ -64,6 +66,7 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
             setAdminLogin('');
             setAdminPassword('');
             setError('');
+            setAdminEmail('')
             console.log('Администратор успешно добавлен!', newAdmin);
         } catch (error) {
             setError(error.message);
@@ -76,9 +79,10 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
 
         const newManager = {
             fio: managerName,
-            login: managerLogin,
+            username: managerLogin,
             password: managerPassword,
             tg: managerTg ,
+            email: managerEmail,
             role: 'account-manager',
         }
         try {
@@ -87,6 +91,7 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
             setManagerLogin('');
             setManagerPassword('');
             setManagerTg('')
+            setManagerEmail('');
             setErrorManager('');
             console.log('Аккаунт-Менеджер успешно добавлен!', newManager);
         } catch (error) {
@@ -96,6 +101,22 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
         };
 
 
+        const handleOpenEditUser = (user) => {
+            setSelectedUser(user);
+            setOpenEditUser(true)
+        }
+
+        const handleCloseEditUser = () => {
+            setOpenEditUser(false)
+        }
+
+        const handleDeleteUser = (id, type) => {
+            if (type === 'superAdmin') {
+                setAdmins(prevAdmins => prevAdmins.filter(admin => admin.id !== id));
+            } else if (type === 'accountManager') {
+                setManagers(prevManagers => prevManagers.filter(manager => manager.id !== id));
+            }
+        };
 
     return(
         <>
@@ -128,12 +149,10 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
                     <input value={adminName}  onChange={e => setAdminName(e.target.value)} placeholder="Введите ФИО" type="text" />
                 <label className={styles.login}>Логин*</label>
                     <input value={adminLogin} onChange={e => setAdminLogin(e.target.value)} placeholder='Введите логин для супер-администратора' type="text" />
+                <label className={styles.email}>Email*</label>
+                    <input value={adminEmail} onChange={e => setAdminEmail(e.target.value)} placeholder='Введите email для супер-администратора' type="text" />
                 <label className={styles.password}>Пароль*</label>
-                        <input
-                        type={showPassword ? 'text' : 'password'}
-                        value={adminPassword}
-                        onChange={e => setAdminPassword(e.target.value)}
-                        placeholder='Введите пароль для супер-администратора' />
+                    <input type={showPassword ? 'text' : 'password'} value={adminPassword} onChange={e => setAdminPassword(e.target.value)} placeholder='Введите пароль для супер-администратора' />
                     <img onClick={toggleShowPassword} className={styles.eyePass} src={showPassword ? eye : closedEye} alt="" />
                     
                     <p style={{color:'red'}}>{error}</p>
@@ -148,16 +167,12 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
                 <input value={managerLogin} onChange={e => setManagerLogin(e.target.value)} placeholder='Введите логин для аккаунт-менеджера' type="text" />
               <label className={styles.tg}>Ник ТГ*</label>
                 <input value={managerTg} onChange={e => setManagerTg(e.target.value)} placeholder='Имя пользователя в телеграмм' type="text" />
+              <label className={styles.email2}>Email*</label>
+                <input value={managerEmail} onChange={e => setManagerEmail(e.target.value)} placeholder='Имя email для аккаунт-менеджера' type="text" />
               <label  className={styles.password2}>Пароль*</label>
-                <input
-                type={showPasswordManager ? 'text' : 'password'}
-                value={managerPassword}
-                onChange={e => setManagerPassword(e.target.value)}
-                placeholder='Введите пароль для аккаунт-менеджера' />
-
+                <input type={showPasswordManager ? 'text' : 'password'} value={managerPassword} onChange={e => setManagerPassword(e.target.value)} placeholder='Введите пароль для аккаунт-менеджера' />
                 <img onClick={toggleShowPasswordManager} className={styles.eyePassManager} src={showPasswordManager ? eye : closedEye} alt="" />
                 <p style={{color:'red'}}>{errorManager}</p>
-                
              <button disabled={!isFormValidManager()}  className={isFormValidManager() ? styles.AdminDashBoardBtn : styles.disabledButton}>Зарегистрировать</button>
          </form>
            )}
@@ -178,10 +193,10 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
                 {adminType === 'superAdmin' ? (
                     <ul className={styles.AdminDashBoardListTable}>
                         {admins.map(admins => (
-                            <li key={admins.id}>{admins.id}. <p>{admins.username}</p>
+                            <li key={admins.id}>{admins.id}. <p>{admins.fio}</p>
                                 <div>
-                                 <button>Редактировать <img src={edit} alt="" /></button>
-                                 <button>Удалить <img src={deleteIcon} alt="" /></button>
+                                 <button onClick={() => handleOpenEditUser({ ...admins, type: 'superAdmin' })}>Редактировать <img src={edit} alt="" /></button>
+                                 <button onClick={() => handleDeleteUser(admins.id, 'superAdmin')}>Удалить <img src={deleteIcon} alt="" /></button>
                              </div>
                             </li>
                             
@@ -191,10 +206,10 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
 
                     <ul className={styles.AdminDashBoardListTable}>
                         {managers.map(managers => (
-                            <li key={managers.id}>{managers.id}. <p>{managers.username}</p>
+                            <li key={managers.id}>{managers.id}. <p>{managers.fio}</p>
                              <div>
-                              <button>Редактировать <img src={edit} alt="" /> </button>
-                              <button>Удалить <img src={deleteIcon} alt="" /></button>
+                              <button onClick={() => handleOpenEditUser({ ...managers, type: 'accountManager' })}>Редактировать <img src={edit} alt="" /></button>
+                              <button onClick={() => handleDeleteUser(managers.id, 'accountManager')}>Удалить <img src={deleteIcon} alt="" /></button>
                              </div>
                             </li>
 
@@ -204,10 +219,9 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
             ) : null}
              </div>
            )}
-           
         </div>
 
-        
+        <EditUser isOpen={openEditUser} isClosed={handleCloseEditUser} user={selectedUser}/>
     </>
         
     )

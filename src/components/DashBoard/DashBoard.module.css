@@ -46,9 +46,10 @@
 }
 
 .logout {
-    margin-left: 422px;
     cursor: pointer;
-    margin-top: 195px;
+    position: absolute;
+    top: 770px;
+    left: 431px;
 }
 
 .DashBoardMainSide {
@@ -213,7 +214,6 @@
     width: 30.86px; 
     height: 30.86px; 
     border-radius: 50%; 
-    background-color: black;
 }
 
 .DashBoardСalendar {

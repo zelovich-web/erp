@@ -1,0 +1,38 @@
+.UniversalModalContent {
+    background-color: #ffffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.3s ease; 
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5); 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.UniversalModal {
+    width: 510px;
+    height: 149px;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.UniversalModal h1 {
+    color: #1CB575;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.UniversalModal img {
+    padding: 31px 0px 8px 243px;
+
+}
+
+.closed {
+    display: none;
+}

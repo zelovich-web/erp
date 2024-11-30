@@ -13,6 +13,11 @@ import StudentDashBoard from './components/StudentDashBoard/StudentDashBoard';
 import TeacherDashBoard from './components/TeacherDashBoard/TeacherDashBoard';
 import AccountManager from './components/AccountManager/AccountManager'
 import AccountManagerDashBoard from './components/AccountManagerDashBoard/AccountManagerDashBoard'
+import EditUser from './components/EditUser/EditUser';
+import UniversalModal from './components/UniversalModal/UniversalModal';
+import DeleteUser from './components/DeleteUserModal/DeleteUserModal';
+
+
 
 const AppRoutes = () => {
     const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -76,6 +81,12 @@ const AppRoutes = () => {
             />
             
             <Route path="/SignInForm" element={<SignInForm />} />
+            <Route path="/EditUser" element={<EditUser />} />
+            <Route path="/UniversalModal" element={<UniversalModal />} />
+            <Route path="/DeleteUser" element={<DeleteUser />} />
+
+
+
             <Route 
                 path="/DashBoard" 
                 element={

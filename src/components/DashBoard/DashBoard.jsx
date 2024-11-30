@@ -11,21 +11,20 @@ import backArrow from '../../assets/Back Arrow.png'
 import arrowLeft from '..//../assets/arrowLeft.svg'
 import arrowRight from '..//../assets/arrowRight.svg'
 import calendar from '..//../assets/calendar.svg'
-import notifcon from '..//../assets/Notifcon.svg'
 import arrowDown from '..//../assets/arrowDown.svg'
 import logout from '..//../assets/logout.svg'
 import glare from '..//../assets/glare.svg'
 import duga1 from '..//../assets/duga1.svg'
 import duga2 from '..//../assets/duga2.svg'
-
+import profileAvatar from '..//../assets/profileAvatar.svg'
 
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector(state => state.auth);
-  const role = user?.role;
-  const userName = user?.username;
+  const role = user.role;
+  const username = user.fio;
   const handleLogout = () => {
     dispatch({ type: 'LOGOUT' });
     navigate('/');
@@ -71,17 +70,19 @@ const Dashboard = () => {
               <img className={styles.duga2} src={duga2} alt="" />
               <img className={styles.glare} src={glare} alt="" />
               <img className={styles.DashBoardLogo} src={logo} alt="logo" />
-                <ul className={styles.DashBoardNav}><p> INNODOM ERP</p>
-                    <li className={styles.li1}>Ученики </li>
-                    <li className={styles.li2}>Группы</li>
-                    <li className={styles.li3}>Преподаватели</li>
-                    <li className={styles.li4}>Задания</li>
-                    <li className={styles.li5}>Награды</li>
-                    <li className={styles.li6}>Заявки на <br /> получение наград</li>
-                    <li className={styles.li7}>Аналитика</li>
-                    <li className={styles.li8}>Настройки</li>
-                    
-                </ul>
+              {role !== 'admin' && (
+                  <ul className={styles.DashBoardNav}>
+                      <p> INNODOM ERP</p>
+                      <li className={styles.li1}>Ученики </li>
+                      <li className={styles.li2}>Группы</li>
+                      <li className={styles.li3}>Преподаватели</li>
+                      <li className={styles.li4}>Задания</li>
+                      <li className={styles.li5}>Награды</li>
+                      <li className={styles.li6}>Заявки на <br /> получение наград</li>
+                      <li className={styles.li7}>Аналитика</li>
+                      <li className={styles.li8}>Настройки</li>
+                  </ul>
+          )}
                 <img className={styles.logout} onClick={handleLogout} src={logout} alt="выйти" />
             </div>
             
@@ -97,8 +98,8 @@ const Dashboard = () => {
             </div>
             <input src={arrowLeft} placeholder='Поиск' className={styles.DashBoardInputSearch} type="text" />
               <div className={styles.DashBoardProfile}>
-                <div className={styles.DashBoardProfileAvatar}></div>
-                <p>{userName}</p>
+                  <img className={styles.DashBoardProfileAvatar} src={profileAvatar} alt="" />
+                <p>{username}</p>
                 <div className={styles.DashBoardToolTip}>
                    <img style={{cursor:'pointer'}} src={arrowDown} alt="" />
                 </div>

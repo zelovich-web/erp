@@ -4,7 +4,7 @@
 
 .AdminDashBoardWrapper{
     width: 708.14px;
-    height: 535.25px;
+    height: 610.36px ;
     background: #fff;
 }
 
@@ -20,18 +20,19 @@
     width: 484px;
     height: 236px;
     margin: 73.18px 108px;
+    height: 100%;
 }
 
 .eyePass {
     position: absolute;
-    top: 489px;
+    top: 565.5px;
     right: 620px;
     cursor: pointer;
 }
 
 .eyePassManager {
     position: absolute;
-    top: 565px;
+    top: 641px;
     right: 620px;
     cursor: pointer;
 }
@@ -123,7 +124,7 @@
 
 .password {
     position: absolute;
-    top: 469px;
+    top: 545px;
     left: 860px;
     background-color: #fff;
     padding: 0px 3px;
@@ -133,7 +134,7 @@
 }
 .password2 {
     position: absolute;
-    top: 545px;
+    top: 621px;
     left: 860px;
     background-color: #fff;
     padding: 0px 3px;
@@ -145,6 +146,29 @@
 .tg {
     position: absolute;
     top: 469px;
+    left: 860px;
+    background-color: #fff;
+    padding: 0px 3px;
+    font-size: 12.03px;
+    font-weight: 500;
+    color:#1280FF99;
+}
+
+.email {
+    position: absolute;
+    top: 469px;
+    left: 860px;
+    background-color: #fff;
+    padding: 0px 3px;
+    font-size: 12.03px;
+    font-weight: 500;
+    color:#1280FF99;
+}
+
+
+.email2{
+    position: absolute;
+    top: 545px;
     left: 860px;
     background-color: #fff;
     padding: 0px 3px;
@@ -214,6 +238,10 @@
     display: flex;
 }
 
+.AdminDashBoardListTable { 
+    padding-top:54px ;
+}
+
 .AdminDashBoardListTable div {
     position: absolute;
     left: 60%;
@@ -223,11 +251,12 @@
 }
 
 
+
 .AdminDashBoardListTable button {
     width: 115px;
     height: 24px;
     border-radius: 6px;
-    background-color: #2D87EF;
+    background-color: #C0CBD8;
     color: #fff;
     border: none;
     font-size: 9.08px;
@@ -284,16 +313,29 @@
     color: #7C7C7D;
     list-style-type: none;
     margin-bottom: 32px;
+    cursor: pointer;
 
 }
 
-.AdminDashBoardListTable li:hover {
-
-}
 
 .AdminDashBoardListTable li p {
     margin-left: 5px;
 }
+
+
+.AdminDashBoardListTable li:hover {
+    color: #1280FF;
+    transition: 0.3s;
+}
+
+.AdminDashBoardListTable li:hover button {
+    background-color: #1280FF;
+    transition: 0.3s;
+}
+
+
+
+
 
 
 

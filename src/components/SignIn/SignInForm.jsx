@@ -37,7 +37,7 @@ const SignInForm = () => {
         if (user) {
             dispatch({
                 type: 'LOGIN',
-                payload: { user: { username: user.username, role: user.role } },
+                payload: { user: { username: user.username, role: user.role, fio: user.fio } },
             });
     
             if (user.role === 'account-manager') {
