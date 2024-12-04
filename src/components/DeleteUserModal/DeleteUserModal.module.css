@@ -1,0 +1,60 @@
+.closed {
+    display: none;
+}
+
+.DeleteUserModalContent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.3s ease; 
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5); 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.DeleteUserModal { 
+    width: 510px;
+    height: 251px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.DeleteUserModal h1 {
+    margin-top: 55px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    color: #99B0CB;
+}
+
+button {
+    width: 101px;
+    border: none;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #C0CBD8;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.btns {
+    display: flex;
+    gap: 42px;
+    margin:40px 137px 63px 128px
+}
+
+
+.btns button:hover {
+    background-color: #2D87EF;
+    cursor: pointer;
+}

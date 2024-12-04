@@ -8,6 +8,7 @@ import printer from '../../assets/printer.svg'
 import edit from './../../assets/edit form.svg'
 import deleteIcon from '../../assets/delete 2.svg'
 import EditUser from "../EditUser/EditUser";
+import DeleteUserModal from '../DeleteUserModal/DeleteUserModal'
 
 const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
     
@@ -30,6 +31,9 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
     const [showPasswordManager, setShowPasswordManager] = useState(false);
     const [openEditUser, setOpenEditUser] = useState(false)
     const [selectedUser, setSelectedUser] = useState(null);
+    const [openDeleteUserModal, setOpenDeleteUserModal] = useState(false);
+    
+    
 
     const toggleShowPassword = () => {
         setShowPassword(!showPassword)
@@ -100,7 +104,6 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
         }
         };
 
-
         const handleOpenEditUser = (user) => {
             setSelectedUser(user);
             setOpenEditUser(true)
@@ -108,6 +111,15 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
 
         const handleCloseEditUser = () => {
             setOpenEditUser(false)
+        }
+
+        const handleDeleteUserModal = ({ userId, userType, fio }) => {
+            setSelectedUser({ userId, userType, fio });
+            setOpenDeleteUserModal(true);
+        };
+
+        const handleDeleteUserModalClose = () => {
+            setOpenDeleteUserModal(false)
         }
 
         const handleDeleteUser = (id, type) => {
@@ -192,11 +204,11 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
                 </div>
                 {adminType === 'superAdmin' ? (
                     <ul className={styles.AdminDashBoardListTable}>
-                        {admins.map(admins => (
-                            <li key={admins.id}>{admins.id}. <p>{admins.fio}</p>
+                        {admins.map(admin => (
+                            <li key={admin.id}>{admin.id}. <p>{admin.fio}</p>
                                 <div>
-                                 <button onClick={() => handleOpenEditUser({ ...admins, type: 'superAdmin' })}>Редактировать <img src={edit} alt="" /></button>
-                                 <button onClick={() => handleDeleteUser(admins.id, 'superAdmin')}>Удалить <img src={deleteIcon} alt="" /></button>
+                                 <button onClick={() => handleOpenEditUser({ ...admin, type: 'superAdmin' })}>Редактировать <img src={edit} alt="" /></button>
+                                 <button onClick={() => handleDeleteUserModal({userId: admin.id, userType: 'superAdmin', fio: admin.fio})}>Удалить <img src={deleteIcon} alt="" /></button>
                              </div>
                             </li>
                             
@@ -205,11 +217,11 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
                 ) : adminType === 'accountManager' ? (
 
                     <ul className={styles.AdminDashBoardListTable}>
-                        {managers.map(managers => (
-                            <li key={managers.id}>{managers.id}. <p>{managers.fio}</p>
+                        {managers.map(manager => (
+                            <li key={manager.id}>{manager.id}. <p>{manager.fio}</p>
                              <div>
-                              <button onClick={() => handleOpenEditUser({ ...managers, type: 'accountManager' })}>Редактировать <img src={edit} alt="" /></button>
-                              <button onClick={() => handleDeleteUser(managers.id, 'accountManager')}>Удалить <img src={deleteIcon} alt="" /></button>
+                              <button onClick={() => handleOpenEditUser({ ...manager, type: 'accountManager' })}>Редактировать <img src={edit} alt="" /></button>
+                              <button onClick={() => handleDeleteUserModal({userId: manager.id, userType:'accountManager', fio: manager.fio})}>Удалить <img src={deleteIcon} alt="" /></button>
                              </div>
                             </li>
 
@@ -222,6 +234,7 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
         </div>
 
         <EditUser isOpen={openEditUser} isClosed={handleCloseEditUser} user={selectedUser}/>
+        <DeleteUserModal   handleDeleteUser={handleDeleteUser}  isOpen={openDeleteUserModal} onClose={handleDeleteUserModalClose} userId={handleDeleteUser?.id} userType={handleDeleteUser?.type} fio={handleDeleteUser?.fio} />
     </>
         
     )
@@ -229,3 +242,7 @@ const AdminDashBoard = ({activeMenu, setActiveMenu}) => {
 
 
 export default AdminDashBoard;
+
+
+
+{/* <button onClick={() => handleDeleteUser(admins.id, 'superAdmin')}>Удалить <img src={deleteIcon} alt="" /></button> */}

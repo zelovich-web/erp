@@ -4,6 +4,7 @@ import avatar from '..//../assets/avatar.svg'
 import UniversalModal from '../UniversalModal/UniversalModal';
 
 
+
 const EditUser = ({ isOpen, isClosed, user }) => {
   const modalClass = isOpen ? styles.active : styles.closed;
 
@@ -13,6 +14,8 @@ const EditUser = ({ isOpen, isClosed, user }) => {
   const [email, setEmail] = useState('');
   const [Tg, setTg] = useState('')
   const [openUniversalModal, setOpenUniversalModal] = useState(false)
+
+
 
   useEffect(() => {
     if (user) {
