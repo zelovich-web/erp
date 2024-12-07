@@ -42,6 +42,14 @@ const Dashboard = () => {
     return `${day}.${month}.${year}`;
   };
 
+
+  const [tooltipVisible, setTooltipVisible] = useState(false);
+
+
+  const handleTooltipToggle = () => {
+    setTooltipVisible(prev => !prev);
+  };
+
   
 
 
@@ -97,13 +105,24 @@ const Dashboard = () => {
               <img style={{cursor:'pointer'}} src={arrowRight} alt="" />
             </div>
             <input src={arrowLeft} placeholder='Поиск' className={styles.DashBoardInputSearch} type="text" />
-              <div className={styles.DashBoardProfile}>
-                  <img className={styles.DashBoardProfileAvatar} src={profileAvatar} alt="" />
-                <p>{username}</p>
-                <div className={styles.DashBoardToolTip}>
-                   <img style={{cursor:'pointer'}} src={arrowDown} alt="" />
-                </div>
+            <div className={styles.DashBoardProfile}>
+              <img className={styles.DashBoardProfileAvatar} src={profileAvatar} alt="" />
+              <p>{username}</p>
+              <div className={styles.DashBoardToolTip}>
+                <img 
+                  style={{cursor: 'pointer'}} 
+                  src={arrowDown} 
+                  alt="" 
+                  onClick={handleTooltipToggle} 
+                />
+                {tooltipVisible && (
+                  <div className={styles.tooltip}>
+                    <div className={styles.tooltipContent}>
+                    </div>
+                  </div>
+                )}
               </div>
+            </div>
         </div>
         <div className={styles.renderContent}>
         {renderContent()}

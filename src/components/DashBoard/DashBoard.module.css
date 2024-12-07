@@ -245,5 +245,33 @@
 
 
 .renderContent {
-    margin-left: 37.39px;
+    margin-left: 36.39px;
+}
+
+
+.tooltip {
+    position: absolute ;
+    width: 180.31px;
+    height: 151.24px;
+    top: 1.54px;
+    left: -161px;
+    background-color: #fff;  
+    z-index: -100;  
+}
+
+.tooltipContent {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tooltipContent button {
+    background-color: #CBE2FF;
+    color: #74B4FF;
+    width: 109.64px;
+    height: 23.5px;
+    border-radius: 4.48px 0px 0px 0px;
+    border: 0.75px 0px 0px 0px;
+    cursor: pointer;
+    
 }
